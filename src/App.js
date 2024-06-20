@@ -1,22 +1,24 @@
 import React from "react";
 import SecondComponent from "./components/SecondComponent";
 import ConditionalRendering from "./components/ConditionalRendering";
+import CompuseState from "./components/CompuseState";
+import FormComp from "./components/FormComp";
 
 function App() {
 
   // props
 
-  const FirstComponent = ({ name, role }) => {
-    // const { name, role } = props;
+  // const FirstComponent = ({ name, role }) => {
+  //   // const { name, role } = props;
 
-    return (
-      <div>
-        <h2>Card</h2>
-        <h3>name: {name}</h3>
-        <p>{role}</p>
-      </div>
-    )
-  }
+  //   return (
+  //     <div>
+  //       <h2>Card</h2>
+  //       <h3>name: {name}</h3>
+  //       <p>{role}</p>
+  //     </div>
+  //   )
+  // }
 
   // const arr = [1, 2, 3, 4, 5];
 
@@ -35,7 +37,9 @@ function App() {
 
       {/* <FirstComponent name="Rahul" role="dev" /> */}
       {/* <SecondComponent /> */}
-      <ConditionalRendering />
+      {/* <ConditionalRendering /> */}
+      {/* <CompuseState /> */}
+      <FormComp />
     </div>
   );
 }
