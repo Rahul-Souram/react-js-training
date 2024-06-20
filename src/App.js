@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import SecondComponent from "./components/SecondComponent";
+import ConditionalRendering from "./components/ConditionalRendering";
 
 function App() {
+
+  // props
+
+  const FirstComponent = ({ name, role }) => {
+    // const { name, role } = props;
+
+    return (
+      <div>
+        <h2>Card</h2>
+        <h3>name: {name}</h3>
+        <p>{role}</p>
+      </div>
+    )
+  }
+
+  // const arr = [1, 2, 3, 4, 5];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello World</h1>
+      {/* {
+        arr.map((item) => {
+          return (
+            <>
+              <FirstComponent /> {item}
+            </>
+          )
+        })
+      } */}
+
+      {/* <FirstComponent name="Rahul" role="dev" /> */}
+      {/* <SecondComponent /> */}
+      <ConditionalRendering />
     </div>
   );
 }
