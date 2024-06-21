@@ -5,27 +5,39 @@ const CompUseEffect = () => {
 
   const url = `https://jsonplaceholder.org/comments`;
 
-  //   useEffect(() => {
-  //     console.log("outside");
-  //   }, []);
+  useEffect(() => {
+    console.log("outside");
+  }, []);
+
+  const [size, setSize] = useState(window.innerWidth);
+
+  const handleSize = () => {
+    setSize(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleSize);
+    // return () => {
+    //   window.addEventListener("resize", handleSize);
+    // };
+  }, []); //window as second parameter
 
   const [state, setState] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-        setState(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  const fetchData = async () => {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      setState(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
+  useEffect(() => {
     fetchData();
   }, []);
 
-  console.log(state);
   // useEffect(() => {
   //   first
   // logiv
@@ -42,6 +54,7 @@ const CompUseEffect = () => {
   return (
     <div>
       <h2>{number}</h2>
+      <h2>{`Window size is ${size}PX`}</h2>
       <button onClick={() => setNumber(number + 1)}>change</button>
       {state.map((item) => {
         const { id, userId, comment } = item;
