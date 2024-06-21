@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext } from "react";
 import SecondComponent from "./components/SecondComponent";
 import ConditionalRendering from "./components/ConditionalRendering";
 import CompuseState from "./components/CompuseState";
@@ -6,7 +6,9 @@ import FormComp from "./components/FormComp";
 import TodoList from "./components/TodoList";
 import CompUseEffect from "./components/CompUseEffect";
 import CompUseRef from "./components/CompUseRef";
+import UseContentAPI from "./components/UseContentAPI";
 
+export const SitContext = createContext();
 function App() {
 
   // props
@@ -24,11 +26,14 @@ function App() {
   // }
 
   // const arr = [1, 2, 3, 4, 5];
+  const rule = "yes";
 
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-      {/* {
+    <SitContext.Provider value={{ rule }}>
+
+      <div className="App">
+        <h1>Hello World</h1>
+        {/* {
         arr.map((item) => {
           return (
             <>
@@ -38,15 +43,17 @@ function App() {
         })
       } */}
 
-      {/* <FirstComponent name="Rahul" role="dev" /> */}
-      {/* <SecondComponent /> */}
-      {/* <ConditionalRendering /> */}
-      {/* <CompuseState /> */}
-      {/* <FormComp /> */}
-      {/* <TodoList /> */}
-      {/* <CompUseEffect /> */}
-      <CompUseRef />
-    </div>
+        {/* <FirstComponent name="Rahul" role="dev" /> */}
+        {/* <SecondComponent /> */}
+        {/* <ConditionalRendering /> */}
+        {/* <CompuseState /> */}
+        {/* <FormComp /> */}
+        {/* <TodoList /> */}
+        {/* <CompUseEffect /> */}
+        <CompUseRef />
+        {/* <UseContentAPI /> */}
+      </div>
+    </SitContext.Provider>
   );
 }
 
