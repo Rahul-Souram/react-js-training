@@ -3,6 +3,9 @@ import SecondComponent from "./components/SecondComponent";
 import ConditionalRendering from "./components/ConditionalRendering";
 import CompuseState from "./components/CompuseState";
 import FormComp from "./components/FormComp";
+import TodoList from "./components/TodoList";
+import CompUseEffect from "./components/CompUseEffect";
+import CompUseRef from "./components/CompUseRef";
 
 function App() {
 
@@ -39,7 +42,10 @@ function App() {
       {/* <SecondComponent /> */}
       {/* <ConditionalRendering /> */}
       {/* <CompuseState /> */}
-      <FormComp />
+      {/* <FormComp /> */}
+      {/* <TodoList /> */}
+      {/* <CompUseEffect /> */}
+      <CompUseRef />
     </div>
   );
 }
