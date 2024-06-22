@@ -16,11 +16,15 @@ const CompUseEffect = () => {
   };
 
   useEffect(() => {
+    // initialization
     window.addEventListener("resize", handleSize);
-    // return () => {
-    //   window.addEventListener("resize", handleSize);
-    // };
-  }, []); //window as second parameter
+
+    // cleanup function
+    // unmounting
+    return () => {
+      window.addEventListener("resize", handleSize);
+    };
+  }, [window]); //window as second parameter
 
   const [state, setState] = useState([]);
 
