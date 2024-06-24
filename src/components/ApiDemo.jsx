@@ -14,6 +14,7 @@ const ApiDemo = () => {
   }, []);
 
   const fetchPosts = async () => {
+    // GET
     try {
       const response = await axios.get(API_URL);
       setPosts(response.data);
@@ -23,8 +24,16 @@ const ApiDemo = () => {
   };
 
   const createPost = async () => {
+    // POST
     try {
-      const response = await axios.post(API_URL, { title, body });
+      const response = await axios.post(
+        API_URL,
+        { title: title, body: body }
+        // {
+        //   Authorization: `Bearer ${token}`,
+        //   Content: "application/json",
+        // }
+      );
       setPosts([...posts, response.data]);
       setTitle("");
       setBody("");
@@ -34,6 +43,7 @@ const ApiDemo = () => {
   };
 
   const updatePost = async () => {
+    // UPDATE
     try {
       const response = await axios.put(`${API_URL}/${postId}`, { title, body });
       setPosts(
@@ -62,6 +72,10 @@ const ApiDemo = () => {
     setPostId(post.id);
   };
 
+  useEffect(() => {
+    console.log(posts.sort((a, b) => b.id - a.id));
+  }, [posts]);
+
   return (
     <div>
       <h1>CRUD Operations with JSONPlaceholder</h1>
@@ -83,14 +97,16 @@ const ApiDemo = () => {
         </button>
       </div>
       <ul>
-        {posts.map((post) => (
-          <li key={post.id}>
-            <h2>{post.title}</h2>
-            <p>{post.body}</p>
-            <button onClick={() => handleEdit(post)}>Edit</button>
-            <button onClick={() => deletePost(post.id)}>Delete</button>
-          </li>
-        ))}
+        {posts
+          .sort((a, b) => b.id - a.id)
+          .map((post) => (
+            <li key={post.id}>
+              <h2>{post.title}</h2>
+              <p>{post.body}</p>
+              <button onClick={() => handleEdit(post)}>Edit</button>
+              <button onClick={() => deletePost(post.id)}>Delete</button>
+            </li>
+          ))}
       </ul>
     </div>
   );

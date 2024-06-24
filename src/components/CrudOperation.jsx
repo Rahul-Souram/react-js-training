@@ -33,6 +33,10 @@ const App = () => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+  const data = [1, 3, 5, 7, 9];
+
+  console.log(data.filter((i) => i !== 5));
+
   return (
     <div style={{ padding: "20px" }}>
       <h1>Todo List</h1>
@@ -48,7 +52,7 @@ const App = () => {
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>
-            {todo.text}
+            <p>{todo.text}</p>
             <button onClick={() => handleEditTodo(todo.id)}>Edit</button>
             <button onClick={() => handleDeleteTodo(todo.id)}>Delete</button>
           </li>

@@ -20,7 +20,6 @@ const CompUseEffect = () => {
     window.addEventListener("resize", handleSize);
 
     // cleanup function
-    // unmounting
     return () => {
       window.addEventListener("resize", handleSize);
     };

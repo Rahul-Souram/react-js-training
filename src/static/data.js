@@ -43,4 +43,8 @@ export const menuLinks = [
         title: "API-Demo",
         link: "/api-integration"
     },
+    {
+        title: "Practice",
+        link: "/practice"
+    },
 ]

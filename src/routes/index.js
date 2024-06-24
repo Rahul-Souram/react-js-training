@@ -13,6 +13,7 @@ import CrudOperation from "../components/CrudOperation";
 import ApiDemo from "../components/ApiDemo";
 import Error from "../components/Error";
 import Header from "../layout/Header";
+import Practice from "../components/Practice";
 
 const Index = () => {
     return (
@@ -31,6 +32,7 @@ const Index = () => {
                     <Route path="/use-context" element={<UseContentAPI />} />
                     <Route path="/crud-operations" element={<CrudOperation />} />
                     <Route path="/api-integration" element={<ApiDemo />} />
+                    <Route path="/practice" element={<Practice />} />
                     <Route path="*" element={<Error />} />
                 </Routes>
                 <h2>Please change the code from the respective components while practicing</h2>
