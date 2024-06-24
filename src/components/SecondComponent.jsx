@@ -21,6 +21,24 @@ const SecondComponent = () => {
     },
   ];
 
+  const newData = [
+    {
+      name: "rahul",
+      age: 22,
+      email: "abc@gmail.com",
+    },
+    {
+      name: "rahul1",
+      age: 25,
+      email: "atbc@gmail.com",
+    },
+    {
+      name: "rahul2",
+      age: 27,
+      email: "fabc@gmail.com",
+    },
+  ];
+
   const NewComponent = ({ data }) => {
     console.log(data);
     return (
@@ -42,6 +60,7 @@ const SecondComponent = () => {
   return (
     <div>
       <NewComponent data={data} />
+      <NewComponent data={newData} />
     </div>
   );
 };
